@@ -1,4 +1,4 @@
-//variables set up to alter be manipulated by jquery
+//variables set up to modify HTML and set up comparisons for functions in Jquery
 var hour9 = {
   element: $('#hour-9'),
   value: 9
@@ -39,42 +39,42 @@ var hour17 = {
 $(function () {
 
   // Listener for click events on the save button.
-  $('#hour-9 button').on('click', function() {
-    var todo9 = $('#hour-9 textarea').val();
-    localStorage.setItem('todo9', todo9);
-  });
-  $('#hour-10 button').on('click', function() {
-    var todo10 = $('#hour-10 textarea').val();
-    localStorage.setItem('todo10', todo10);
-  });
-  $('#hour-11 button').on('click', function() {
-    var todo11 = $('#hour-11 textarea').val();
-    localStorage.setItem('todo11', todo11);
-  });
-  $('#hour-12 button').on('click', function() {
-    var todo12 = $('#hour-12 textarea').val();
-    localStorage.setItem('todo12', todo12);
-  });
-  $('#hour-13 button').on('click', function() {
-    var todo13 = $('#hour-13 textarea').val();
-    localStorage.setItem('todo13', todo13);
-  });
-  $('#hour-14 button').on('click', function() {
-    var todo14 = $('#hour-14 textarea').val();
-    localStorage.setItem('todo14', todo14);
-  });
-  $('#hour-15 button').on('click', function() {
-    var todo15 = $('#hour-15 textarea').val();
-    localStorage.setItem('todo15', todo15);
-  });
-  $('#hour-16 button').on('click', function() {
-    var todo16 = $('#hour-16 textarea').val();
-    localStorage.setItem('todo16', todo16);
-  });
-  $('#hour-17 button').on('click', function() {
-    var todo17 = $('#hour-17 textarea').val();
-    localStorage.setItem('todo17', todo17);
-  });
+    $('#hour-9 button').on('click', function() {
+      var todo9 = $('#hour-9 textarea').val();
+      localStorage.setItem('todo9', todo9);
+    });
+    $('#hour-10 button').on('click', function() {
+      var todo10 = $('#hour-10 textarea').val();
+      localStorage.setItem('todo10', todo10);
+    });
+    $('#hour-11 button').on('click', function() {
+      var todo11 = $('#hour-11 textarea').val();
+      localStorage.setItem('todo11', todo11);
+    });
+    $('#hour-12 button').on('click', function() {
+      var todo12 = $('#hour-12 textarea').val();
+      localStorage.setItem('todo12', todo12);
+    });
+    $('#hour-13 button').on('click', function() {
+      var todo13 = $('#hour-13 textarea').val();
+      localStorage.setItem('todo13', todo13);
+    });
+    $('#hour-14 button').on('click', function() {
+      var todo14 = $('#hour-14 textarea').val();
+      localStorage.setItem('todo14', todo14);
+    });
+    $('#hour-15 button').on('click', function() {
+      var todo15 = $('#hour-15 textarea').val();
+      localStorage.setItem('todo15', todo15);
+    });
+    $('#hour-16 button').on('click', function() {
+      var todo16 = $('#hour-16 textarea').val();
+      localStorage.setItem('todo16', todo16);
+    });
+    $('#hour-17 button').on('click', function() {
+      var todo17 = $('#hour-17 textarea').val();
+      localStorage.setItem('todo17', todo17);
+    });
   // Code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
   function updateColor () {
