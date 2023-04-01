@@ -38,7 +38,15 @@ var hour17 = {
   value: 17
 }
 
-
+var todo9 = $('#hour-9 textarea').val();
+var todo10 = $('#hour-10 textarea').val();
+var tod11 = $('#hour-11 textarea').val();
+var todo12 = $('#hour-12 textarea').val();
+var todo13 = $('#hour-13 textarea').val();
+var todo14 = $('#hour-14 textarea').val();
+var todo15 = $('#hour-15 textarea').val();
+var todo16 = $('#hour-16 textarea').val();
+var todo17 = $('#hour-17 textarea').val();
 
 $(function () {
 
@@ -49,8 +57,32 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  $('hour-9 button').on(click, funtion() {
-    
+  $('hour-9 button').on('click', function() {
+    localStorage.setItem('todo9', todo9);
+  });
+  $('hour-10 button').on('click', function() {
+    localStorage.setItem('todo10', todo10);
+  });
+  $('hour-11 button').on('click', function() {
+    localStorage.setItem('todo11', todo11);
+  });
+  $('hour-12 button').on('click', function() {
+    localStorage.setItem('todo12', todo12);
+  });
+  $('hour-13 button').on('click', function() {
+    localStorage.setItem('todo13', todo13);
+  });
+  $('hour-14 button').on('click', function() {
+    localStorage.setItem('todo14', todo14);
+  });
+  $('hour-15 button').on('click', function() {
+    localStorage.setItem('todo15', todo15);
+  });
+  $('hour-16 button').on('click', function() {
+    localStorage.setItem('todo16', todo16);
+  });
+  $('hour-17 button').on('click', function() {
+    localStorage.setItem('todo17', todo17);
   });
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -78,6 +110,8 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+  
+
   // TODO: Add code to display the current date in the header of the page.
   function updateTime() {
     var now = dayjs();
