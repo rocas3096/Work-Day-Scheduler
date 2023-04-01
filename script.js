@@ -1,15 +1,43 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var hour9 = $('#hour-9');
-var hour10 = $('#hour-10');
-var hour11 = $('#hour-11');
-var hour12 = $('#hour-12');
-var hour13 = $('#hour-13');
-var hour14 = $('#hour-14');
-var hour15 = $('#hour-15');
-var hour16 = $('#hour-16');
-var hour17 = $('#hour-17');
+var hour9 = {
+  element: $('#hour-9'),
+  value: 9
+}
+var hour10 = {
+  element: $('#hour-10'),
+  value: 10
+}
+var hour11 = {
+  element: $('#hour-11'),
+  value: 11
+}
+var hour12 = {
+  element: $('#hour-12'),
+  value: 12
+}
+var hour13 = {
+  element: $('#hour-13'),
+  value: 13
+}
+var hour14 = {
+  element: $('#hour-14'),
+  value: 14
+}
+var hour15 = {
+  element: $('#hour-15'),
+  value: 15
+}
+var hour16 = {
+  element: $('#hour-16'),
+  value: 16
+}
+var hour17 = {
+  element: $('#hour-17'),
+  value: 17
+}
+
 
 
 $(function () {
@@ -20,10 +48,10 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  hour9.on('click', function() {
-
-  })
   //
+  $('hour-9 button').on(click, funtion() {
+    
+  });
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
@@ -32,10 +60,19 @@ $(function () {
   //
   function updateColor () {
     var now = dayjs ();
-    var format = now.format('hh');
-    
-    if (format )
-  }
+    var currentHour = now.hour();
+    $.each([hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17],
+      function(index, hour) {
+      if (currentHour == hour.value) {
+        hour.element.attr('class','row time-block present')
+      } else if (currentHour > hour.value) {
+        hour.element.attr('class','row time-block past')
+      } else {
+        hour.element.attr('class','row time-block future')
+      } 
+    });
+  };
+  updateColor();
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
