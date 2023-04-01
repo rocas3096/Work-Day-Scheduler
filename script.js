@@ -1,6 +1,4 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+//variables set up to alter be manipulated by jquery
 var hour9 = {
   element: $('#hour-9'),
   value: 9
@@ -38,58 +36,47 @@ var hour17 = {
   value: 17
 }
 
-var todo9 = $('#hour-9 textarea').val();
-var todo10 = $('#hour-10 textarea').val();
-var tod11 = $('#hour-11 textarea').val();
-var todo12 = $('#hour-12 textarea').val();
-var todo13 = $('#hour-13 textarea').val();
-var todo14 = $('#hour-14 textarea').val();
-var todo15 = $('#hour-15 textarea').val();
-var todo16 = $('#hour-16 textarea').val();
-var todo17 = $('#hour-17 textarea').val();
-
 $(function () {
 
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  $('hour-9 button').on('click', function() {
+  // Listener for click events on the save button.
+  $('#hour-9 button').on('click', function() {
+    var todo9 = $('#hour-9 textarea').val();
     localStorage.setItem('todo9', todo9);
   });
-  $('hour-10 button').on('click', function() {
+  $('#hour-10 button').on('click', function() {
+    var todo10 = $('#hour-10 textarea').val();
     localStorage.setItem('todo10', todo10);
   });
-  $('hour-11 button').on('click', function() {
+  $('#hour-11 button').on('click', function() {
+    var todo11 = $('#hour-11 textarea').val();
     localStorage.setItem('todo11', todo11);
   });
-  $('hour-12 button').on('click', function() {
+  $('#hour-12 button').on('click', function() {
+    var todo12 = $('#hour-12 textarea').val();
     localStorage.setItem('todo12', todo12);
   });
-  $('hour-13 button').on('click', function() {
+  $('#hour-13 button').on('click', function() {
+    var todo13 = $('#hour-13 textarea').val();
     localStorage.setItem('todo13', todo13);
   });
-  $('hour-14 button').on('click', function() {
+  $('#hour-14 button').on('click', function() {
+    var todo14 = $('#hour-14 textarea').val();
     localStorage.setItem('todo14', todo14);
   });
-  $('hour-15 button').on('click', function() {
+  $('#hour-15 button').on('click', function() {
+    var todo15 = $('#hour-15 textarea').val();
     localStorage.setItem('todo15', todo15);
   });
-  $('hour-16 button').on('click', function() {
+  $('#hour-16 button').on('click', function() {
+    var todo16 = $('#hour-16 textarea').val();
     localStorage.setItem('todo16', todo16);
   });
-  $('hour-17 button').on('click', function() {
+  $('#hour-17 button').on('click', function() {
+    var todo17 = $('#hour-17 textarea').val();
     localStorage.setItem('todo17', todo17);
   });
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
+  // Code to apply the past, present, or future class to each time
+  // block by comparing the id to the current hour.
   function updateColor () {
     var now = dayjs ();
     var currentHour = now.hour();
@@ -106,13 +93,29 @@ $(function () {
   };
   updateColor();
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  
+  //Code to get any user input that was saved in localStorage and set
+  // the values of the corresponding textarea elements.
+  var savedtodo9 =localStorage.getItem('todo9')
+  var savedtodo10 =localStorage.getItem('todo10')
+  var savedtodo11 =localStorage.getItem('todo11')
+  var savedtodo12 =localStorage.getItem('todo12')
+  var savedtodo13 =localStorage.getItem('todo13')
+  var savedtodo14 =localStorage.getItem('todo14')
+  var savedtodo15 =localStorage.getItem('todo15')
+  var savedtodo16 =localStorage.getItem('todo16')
+  var savedtodo17 =localStorage.getItem('todo17')
 
-  // TODO: Add code to display the current date in the header of the page.
+  $('#hour-9 textarea').val(savedtodo9)
+  $('#hour-10 textarea').val(savedtodo10)
+  $('#hour-11 textarea').val(savedtodo11)
+  $('#hour-12 textarea').val(savedtodo12)
+  $('#hour-13 textarea').val(savedtodo13)
+  $('#hour-14 textarea').val(savedtodo14)
+  $('#hour-15 textarea').val(savedtodo15)
+  $('#hour-16 textarea').val(savedtodo16)
+  $('#hour-17 textarea').val(savedtodo17)
+
+  //Code to display the current date in the header of the page.
   function updateTime() {
     var now = dayjs();
     var formatted = now.format('MMM DD, YYYY [at] hh:mm:ss a');
