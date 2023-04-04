@@ -39,42 +39,10 @@ var hour17 = {
 $(function () {
 
   // Listener for click events on the save button.
-    $('#hour-9 button').on('click', function() {
-      var todo9 = $('#hour-9 textarea').val();
-      localStorage.setItem('todo9', todo9);
-    });
-    $('#hour-10 button').on('click', function() {
-      var todo10 = $('#hour-10 textarea').val();
-      localStorage.setItem('todo10', todo10);
-    });
-    $('#hour-11 button').on('click', function() {
-      var todo11 = $('#hour-11 textarea').val();
-      localStorage.setItem('todo11', todo11);
-    });
-    $('#hour-12 button').on('click', function() {
-      var todo12 = $('#hour-12 textarea').val();
-      localStorage.setItem('todo12', todo12);
-    });
-    $('#hour-13 button').on('click', function() {
-      var todo13 = $('#hour-13 textarea').val();
-      localStorage.setItem('todo13', todo13);
-    });
-    $('#hour-14 button').on('click', function() {
-      var todo14 = $('#hour-14 textarea').val();
-      localStorage.setItem('todo14', todo14);
-    });
-    $('#hour-15 button').on('click', function() {
-      var todo15 = $('#hour-15 textarea').val();
-      localStorage.setItem('todo15', todo15);
-    });
-    $('#hour-16 button').on('click', function() {
-      var todo16 = $('#hour-16 textarea').val();
-      localStorage.setItem('todo16', todo16);
-    });
-    $('#hour-17 button').on('click', function() {
-      var todo17 = $('#hour-17 textarea').val();
-      localStorage.setItem('todo17', todo17);
-    });
+  $('.saveBtn').on('click', function () {
+    localStorage.setItem($(this).parent('div').attr('id') , $(this).siblings('textarea').val());
+  });
+
   // Code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
   function updateColor () {
@@ -95,25 +63,15 @@ $(function () {
 
   //Code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements.
-  var savedtodo9 =localStorage.getItem('todo9')
-  var savedtodo10 =localStorage.getItem('todo10')
-  var savedtodo11 =localStorage.getItem('todo11')
-  var savedtodo12 =localStorage.getItem('todo12')
-  var savedtodo13 =localStorage.getItem('todo13')
-  var savedtodo14 =localStorage.getItem('todo14')
-  var savedtodo15 =localStorage.getItem('todo15')
-  var savedtodo16 =localStorage.getItem('todo16')
-  var savedtodo17 =localStorage.getItem('todo17')
-
-  $('#hour-9 textarea').val(savedtodo9)
-  $('#hour-10 textarea').val(savedtodo10)
-  $('#hour-11 textarea').val(savedtodo11)
-  $('#hour-12 textarea').val(savedtodo12)
-  $('#hour-13 textarea').val(savedtodo13)
-  $('#hour-14 textarea').val(savedtodo14)
-  $('#hour-15 textarea').val(savedtodo15)
-  $('#hour-16 textarea').val(savedtodo16)
-  $('#hour-17 textarea').val(savedtodo17)
+  function readFromStorage () {
+     $('.time-block').each(function(index, element) {
+        var savedText = localStorage.getItem($(element).attr('id'));
+        if (savedText !== null) {
+          $(element).find('textarea').val(savedText);
+        }
+      });
+  };
+  readFromStorage();
 
   //Code to display the current date in the header of the page.
   function updateTime() {
