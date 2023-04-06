@@ -2,7 +2,7 @@
 
 ## Description
 
-I made this password generator to test my knowledge and skills in jquery. It also gave me a nice tool for structing my time around a 9-5 work schedule accurate to the current hour that I can later style or expand upon to implement in my daily life. I learned how to use jquery to create functions, call information from third party apis, use templetes from preset websites such as bootstrap, and call on parents siblings and other attributes of my html within my jquery for future manipulation.
+I made this work day scheduler to test my knowledge and skills in jquery. It also gave me a nice tool for structing my time around a 9-5 work schedule accurate to the current hour that I can later style or expand upon to implement in my daily life. I learned how to use jquery to create functions, call information from third party apis, use templetes from preset websites such as bootstrap, and call on parents siblings and other attributes of my html within my jquery for future manipulation.
 
 ## Installation
 
